@@ -1,0 +1,2 @@
+# we-cli
+CLI tool
