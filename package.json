@@ -1,0 +1,40 @@
+{
+  "name": "we-cli",
+  "version": "0.5.0",
+  "description": "CLI tool",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm install -g",
+    "version": "we -v"
+  },
+  "bin": {
+    "we": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HAVENT81/we-cli.git"
+  },
+  "keywords": [
+    "HAVENT",
+    "nodejs",
+    "we",
+    "cli"
+  ],
+  "author": "HAVENT<havent@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HAVENT81/we-cli/issues"
+  },
+  "homepage": "https://github.com/HAVENT81/we-cli#readme",
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^5.1.0",
+    "git-clone": "^0.1.0",
+    "inquirer": "^7.2.0",
+    "shelljs": "^0.8.4",
+    "single-line-log": "^1.1.2",
+    "tracer": "^1.1.2"
+  },
+  "dependencies": {
+  }
+}
