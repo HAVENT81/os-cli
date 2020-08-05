@@ -1,10 +1,11 @@
 {
-  "name": "we-cli",
-  "version": "0.5.0",
-  "description": "CLI tool",
+  "name": "@havent/we-cli",
+  "version": "0.5.5",
+  "description": "WE-CLI tool 命令行工具",
   "main": "index.js",
   "scripts": {
-    "install": "npm install -g",
+    "installGlobal": "npm install -g",
+    "uninstallGlobal": "npm uninstall -g @havent/we-cli",
     "version": "we -v"
   },
   "bin": {
@@ -27,14 +28,11 @@
   },
   "homepage": "https://github.com/HAVENT81/we-cli#readme",
   "devDependencies": {
-    "chalk": "^4.1.0",
     "commander": "^5.1.0",
-    "git-clone": "^0.1.0",
-    "inquirer": "^7.2.0",
-    "shelljs": "^0.8.4",
-    "single-line-log": "^1.1.2",
+    "inquirer": "^7.3.3",
     "tracer": "^1.1.2"
   },
   "dependencies": {
+    "lodash": "^4.17.19"
   }
 }
