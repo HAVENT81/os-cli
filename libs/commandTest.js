@@ -7,6 +7,7 @@
  *  checkbox – 复选框等等
  */
 const inquirer = require('inquirer')
+const ProgressBar = require('../utils/progress-bar')
 
 const commandTest = module.exports
 
@@ -79,6 +80,9 @@ commandTest.initTest = (config) => {
             ...config,
             ...answers
         })
+
+        // 调用测试下载
+        testDownload()
     }).catch(error => {
         console.error(error)
         if(error.isTtyError) {
@@ -87,4 +91,24 @@ commandTest.initTest = (config) => {
             // Something else when wrong
         }
     })
+}
+
+
+function testDownload() {
+    let pb = new ProgressBar('下载进度', 50)
+    let num = 0, total = 100
+    function downloading() {
+        if (num < total) {
+            pb.render({ completed: num, total: total, status: '下载中...' })
+            num++
+            setTimeout(function () {
+                downloading()
+            }, 50)
+        }else{
+            pb.render({completed: num, total: total, status: "下载完毕."})
+            process.exit(0)
+        }
+    }
+
+    downloading()
 }
