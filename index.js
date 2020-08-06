@@ -25,7 +25,7 @@ program.on('--help', function () {
     console.log('Examples (调用示例):')
     console.log('  $ we -v')
     console.log('  $ we test')
-    console.log('  $ we test -n HH -a 18')
+    console.log('  $ we test -n HH -a 18 p 18001670961')
     console.log('')
 })
 
@@ -36,10 +36,12 @@ program
     .description('这是一个测试命令') // 描述
     .option('-n, --nickName [nickName]', '姓名', 'HAVENT')
     .option('-a, --age [age]', '年龄', '38')
+    .option('-p, --phone [phone]', '手机')
     .action((options) => {
         let config = {
             nickName: options.nickName || '',
             age: options.age || 0,
+            phone: options.phone || null,
             role: ''
         }
 

@@ -43,17 +43,19 @@ commandTest.initTest = (config) => {
         }
     })
 
-    prompts.push({
-        type: 'number',
-        name: 'phone',
-        message: '手机号码？',
-        validate: input => {
-            if (!isNaN(input)) {
-                return true
+    if (!config.phone) {
+        prompts.push({
+            type: 'number',
+            name: 'phone',
+            message: '手机号码？',
+            validate: input => {
+                if (!isNaN(input)) {
+                    return true
+                }
+                return '手机号码必填！'
             }
-            return '手机号码必填！'
-        }
-    })
+        })
+    }
 
     prompts.push({
         type: 'list',
@@ -73,7 +75,10 @@ commandTest.initTest = (config) => {
 
     inquirer.prompt(prompts).then(function (answers) {
         // console.log(chalk.blue.bgRed(answers))
-        console.log(answers)
+        console.log({
+            ...config,
+            ...answers
+        })
     }).catch(error => {
         console.error(error)
         if(error.isTtyError) {
