@@ -1,6 +1,6 @@
 {
   "name": "@havent/we-cli",
-  "version": "0.5.8",
+  "version": "0.6.1",
   "description": "WE-CLI tool 命令行工具",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,9 @@
   "homepage": "https://github.com/HAVENT81/we-cli#readme",
   "devDependencies": {
     "commander": "^5.1.0",
+    "git-clone": "^0.1.0",
     "inquirer": "^7.3.3",
+    "shelljs": "^0.8.4",
     "single-line-log": "^1.1.2",
     "tracer": "^1.1.2"
   },

@@ -2,11 +2,8 @@
 
 const pkg = require('./package.json')
 const program = require('commander')
-const { initTest } = require('./libs/commandTest')
-
-// const clone = require('git-clone')
-// const shell = require('shelljs')
-// const log = require('tracer').colorConsole()
+const { initTest } = require('./libs/cmd-test')
+const commandInit = require('./libs/cmd-init')
 
 // console.log(`version: ${pkg.version}`)
 // console.log(`author: ${pkg.author}`)
@@ -48,6 +45,12 @@ program
         initTest(config)
     })
 
+// HH: 初始化项目
+program
+    .command('init <projectName>')
+    .action(function(projectName) {
+        commandInit.init(projectName)
+    })
 
 // 解析命令行
 program.parse(argv)

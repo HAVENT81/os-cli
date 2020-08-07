@@ -9,9 +9,9 @@
 const inquirer = require('inquirer')
 const ProgressBar = require('../utils/progress-bar')
 
-const commandTest = module.exports
+const cmdTest = module.exports
 
-commandTest.initTest = (config) => {
+cmdTest.initTest = (config) => {
     const prompts = []
 
     console.log(config)
