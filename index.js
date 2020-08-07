@@ -23,6 +23,7 @@ program.on('--help', function () {
     console.log('  $ we -v')
     console.log('  $ we test')
     console.log('  $ we test -n HH -a 18 p 18001670961')
+    console.log('  $ we init myProject')
     console.log('')
 })
 
